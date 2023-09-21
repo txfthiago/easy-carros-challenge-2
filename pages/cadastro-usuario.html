@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/hamburguer-menu.css" />
+    <link rel="stylesheet" href="../styles/cadastro-usuario.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header-app">
+      <div class="menu-icon" id="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <nav class="menu" id="menu">
+        <ul>
+          <li><a href="/inicio">Início</a></li>
+        </ul>
+      </nav>
+      <img
+        class="logo"
+        src="../assets/Captura_de_Tela_2023-09-20_às_22.08.36-removebg-preview.png"
+        alt="logo easy carros"
+      />
+    </header>
+    <main>
+      <div class="title">
+        <h1>
+          Seja Bem vindo! <br />
+          Vamos começar?
+        </h1>
+      </div>
+
+      <div class="form-container">
+        <form
+          id="formulario"
+          class="form-cad"
+          action="#"
+          onsubmit="return validarFormulario()"
+        >
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" class="input" required />
+
+          <label for="cpfcnpj">CPF/CNPJ:</label>
+          <input
+            type="text"
+            id="cpfcnpj"
+            name="cpfcnpj"
+            class="input"
+            type="number"
+            required
+          />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" class="input" required />
+
+          <label for="senha">Senha:</label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            class="input"
+            required
+          />
+        </form>
+        <div id="mensagem-erro" class="error"></div>
+        <div class="have-account">
+          <a href="/login">Já possui uma conta?</a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <button
+        class="create-account-button"
+        id="submit-button"
+        onclick="submit()"
+      >
+        Criar conta
+      </button>
+    </footer>
+
+    <script src="../scripts/hamburguerMenu.js"></script>
+    <script>
+      const submitButton = document.getElementById("submit-button");
+      const meuFormulario = document.getElementById("formulario");
+
+      const submit = () => {
+        var nome = document.getElementById("nome").value;
+        var cpfcnpj = document.getElementById("cpfcnpj").value;
+        var email = document.getElementById("email").value;
+        var senha = document.getElementById("senha").value;
+        var mensagemErro = document.getElementById("mensagem-erro");
+
+        // Verifique se todos os campos estão preenchidos
+        if (nome === "" || cpfcnpj === "" || email === "" || senha === "") {
+          window.alert("Preencha todos os campos");
+          return false;
+        }
+
+        window.location.href = "/home-page";
+        return true;
+      };
+    </script>
+  </body>
+</html>

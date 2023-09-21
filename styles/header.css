@@ -1,0 +1,7 @@
+.header-app{
+    display: flex;
+    justify-content: space-around;
+}
+.logo{
+    width: 8rem;
+}
