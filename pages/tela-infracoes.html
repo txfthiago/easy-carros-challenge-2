@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/hamburguer-menu.css" />
+    <link rel="stylesheet" href="../styles/tela-infracoes.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header-app">
+      <div class="menu-icon" id="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <nav class="menu" id="menu">
+        <ul>
+          <li><a href="/inicio">Início</a></li>
+        </ul>
+      </nav>
+      <img
+        class="logo"
+        src="../assets/Captura_de_Tela_2023-09-20_às_22.08.36-removebg-preview.png"
+        alt="logo easy carros"
+      />
+    </header>
+    <main>
+      <h1>Monitoramento de infrações</h1>
+
+      <div class="table">
+        <table id="minha-tabela">
+          <thead>
+            <tr>
+              <th>PLACA</th>
+              <th>VALOR</th>
+              <th>STATUS</th>
+              <th>INFO</th>
+              <th>DELETAR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ABC-123</td>
+              <td>R$ 500,00</td>
+              <td>Pago</td>
+              <td><a href="informacoes.html">Detalhes</a></td>
+              <td>
+                <button onclick="deleteRowButton()" id="delete-row">X</button>
+              </td>
+            </tr>
+            <!-- Outras linhas de dados podem ser adicionadas aqui -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close" id="fechar-modal">&times;</span>
+          <h2>Adicionar Nova Linha</h2>
+          <form id="formulario">
+            <label for="placa">PLACA:</label>
+            <input type="text" id="placa" name="placa" required /><br />
+            <label for="valor">VALOR:</label>
+            <input type="text" id="valor" name="valor" required /><br />
+
+            <label for="info">INFO:</label>
+            <input type="text" id="info" name="info" required /><br />
+            <label for="status">STATUS:</label>
+
+            <select id="status" required>
+              <option value="Pago">Pago</option>
+              <option value="Não pago">Não pago</option>
+              <option value="Pagamento atrasado">Pagamento atrasado</option>
+              <option value="Em processamento">Em processamento</option>
+            </select>
+            <button type="button" id="salvar-linha">Salvar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <button id="adicionar-linha">Adicionar veículo</button>
+    </footer>
+
+    <script src="../scripts/addRowOnTable.js"></script>
+    <script src="../scripts/hamburguerMenu.js"></script>
+  </body>
+</html>

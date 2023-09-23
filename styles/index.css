@@ -23,8 +23,12 @@ body {
   width: 100%;
   border: none;
   background-color: blue;
-  color: white;
   height: 4rem;
+}
+
+.button-baseboard a {
+  color: white;
+  text-decoration: none;
   font-size: 1rem;
   font-weight: 700;
 }
