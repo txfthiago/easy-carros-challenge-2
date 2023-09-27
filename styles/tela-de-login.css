@@ -68,3 +68,10 @@ main {
 .have-account a {
   color: #000000;
 }
+
+.forgot-password {
+  width: 150%
+  display: flex;
+  gap: 1rem;
+  
+}
