@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/hamburguer-menu.css" />
+    <link rel="stylesheet" href="../styles/tela-financiamento.css" />
+    <title>Formulário de Contato</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header-app">
+      <div class="menu-icon" id="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <nav class="menu" id="menu">
+        <ul>
+          <li><a href="/inicio">Início</a></li>
+        </ul>
+      </nav>
+      <img
+        class="logo"
+        src="../assets/Captura_de_Tela_2023-09-20_às_22.08.36-removebg-preview.png"
+        alt="logo easy carros"
+      />
+    </header>
+
+    <form id="formulario">
+      <p>
+        Nossos agentes entrarão em contato em breve. <br />
+        Escolha a melhor forma para contata-lo
+      </p>
+      <div class="radio-container">
+        <div class="input-content">
+          <input
+            type="radio"
+            id="email"
+            name="opcao-contato"
+            value="email"
+            class="input-radio"
+          />
+          <label class="opcao-contato-label" for="email">E-mail</label>
+        </div>
+
+        <div class="input-content">
+          <input
+            type="radio"
+            id="whatsapp"
+            name="opcao-contato"
+            value="whatsapp"
+            class="input-radio"
+          />
+          <label class="opcao-contato-label" for="whatsapp">WhatsApp</label>
+        </div>
+        <div class="input-content">
+          <input
+            type="radio"
+            id="telefone"
+            name="opcao-contato"
+            value="telefone"
+            class="input-radio"
+          />
+          <label class="opcao-contato-label" for="telefone">Telefone</label>
+        </div>
+      </div>
+
+      <div id="campo-email" class="hidden">
+        <label for="email-input">E-mail:</label>
+        <input type="email" id="email-input" name="email" required />
+      </div>
+
+      <div id="campo-whatsapp" class="hidden">
+        <label for="whatsapp-input">WhatsApp:</label>
+        <input
+          type="tel"
+          id="whatsapp-input"
+          name="whatsapp"
+          placeholder="Ex: (99) 99999-9999"
+          required
+        />
+      </div>
+
+      <div id="campo-telefone" class="hidden">
+        <label for="telefone-input">Telefone:</label>
+        <input
+          type="tel"
+          id="telefone-input"
+          name="telefone"
+          placeholder="Ex: (99) 9999-9999"
+          required
+        />
+      </div>
+      <div class="date">
+        <label for="data">Data de Contato:</label>
+        <input type="date" id="data" name="data" required />
+      </div>
+    </form>
+
+    <div id="confirmation-modal" class="modal">
+      <div class="aling-modal">
+        <div class="modal-content">
+          <h2>Confirmação</h2>
+          <p>Embreve um de nosso agentes entrará em contato com você</p>
+          <div>
+            <button id="confirm-btn" onclick="directToHome()">Confirmar</button>
+            <button id="cancel-btn">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <button id="open-modal-btn">Enviar</button>
+    </footer>
+
+    <script>
+      const opcaoEmail = document.getElementById("email");
+      const opcaoWhatsapp = document.getElementById("whatsapp");
+      const opcaoTelefone = document.getElementById("telefone");
+      const campoEmail = document.getElementById("campo-email");
+      const campoWhatsapp = document.getElementById("campo-whatsapp");
+      const campoTelefone = document.getElementById("campo-telefone");
+
+      opcaoEmail.addEventListener("change", () => {
+        if (opcaoEmail.checked) {
+          campoEmail.classList.remove("hidden");
+          campoWhatsapp.classList.add("hidden");
+          campoTelefone.classList.add("hidden");
+        }
+      });
+
+      opcaoWhatsapp.addEventListener("change", () => {
+        if (opcaoWhatsapp.checked) {
+          campoEmail.classList.add("hidden");
+          campoWhatsapp.classList.remove("hidden");
+          campoTelefone.classList.add("hidden");
+        }
+      });
+
+      opcaoTelefone.addEventListener("change", () => {
+        if (opcaoTelefone.checked) {
+          campoEmail.classList.add("hidden");
+          campoWhatsapp.classList.add("hidden");
+          campoTelefone.classList.remove("hidden");
+        }
+      });
+
+      const openModalButton = document.getElementById("open-modal-btn");
+
+      const confirmationModal = document.getElementById("confirmation-modal");
+
+      const confirmButton = document.getElementById("confirm-btn");
+      const cancelButton = document.getElementById("cancel-btn");
+
+      openModalButton.addEventListener("click", () => {
+        confirmationModal.style.display = "block";
+      });
+
+      cancelButton.addEventListener("click", () => {
+        confirmationModal.style.display = "none";
+      });
+
+      confirmButton.addEventListener("click", () => {
+        confirmationModal.style.display = "none";
+      });
+
+      const directToHome = () => {
+        window.location = "/home";
+      };
+    </script>
+    <script src="../scripts/hamburguerMenu.js"></script>
+  </body>
+</html>
