@@ -46,10 +46,8 @@ main {
 }
 
 .create-account-button:hover {
-
-    background-color: rgb(2, 2, 155);
+  background-color: rgb(2, 2, 155);
 }
-
 
 .input {
   border: none;
@@ -70,8 +68,9 @@ main {
 }
 
 .forgot-password {
-  width: 150%
+  width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   gap: 1rem;
-  
 }

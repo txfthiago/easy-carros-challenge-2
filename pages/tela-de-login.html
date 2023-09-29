@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../styles/hamburguer-menu.css" />
     <link rel="stylesheet" href="../styles/cadastro-usuario.css" />
     <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/tela-de-login.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -61,7 +62,7 @@
           <a href="/esqueci-a-senha"> Esqueci a senha </a>
           <a href="../pages/cadastro-usuario.html"> Não possui uma conta? </a>
         </div>
-        </div>
+      </div>
     </main>
     <footer>
       <button
@@ -79,14 +80,12 @@
       const meuFormulario = document.getElementById("formulario");
 
       const submit = () => {
-        var nome = document.getElementById("nome").value;
-        var cpfcnpj = document.getElementById("cpfcnpj").value;
         var email = document.getElementById("email").value;
         var senha = document.getElementById("senha").value;
         var mensagemErro = document.getElementById("mensagem-erro");
 
         // Verifique se todos os campos estão preenchidos
-        if (nome === "" || cpfcnpj === "" || email === "" || senha === "") {
+        if (email === "" || senha === "") {
           window.alert("Preencha todos os campos");
           return false;
         }
